@@ -5,21 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 @Entity
-public class Email {
+public class EmailUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String email;
+	private String password;
+	private String role;
 	
-	private EmailUser remetente;
-	private EmailUser destinatario;
-	
-	private String mensagem;
+	private Email emailEnviado;
+	private Email emailRecebido;
 	
 }
